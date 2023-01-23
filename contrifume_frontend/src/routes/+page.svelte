@@ -13,6 +13,11 @@
             contributor_name: "Basant Karki",
             contributor_image: "https://avatars.githubusercontent.com/u/60461905?v=4",
             joined_in: "January 2021",
+        },
+        {
+            contributor_name: "Bishwas Bhandari",
+            contributor_image: "https://avatars.githubusercontent.com/u/42182303?v=4",
+            joined_in: "January 2021",
         }
     ]
 </script>

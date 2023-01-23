@@ -4,7 +4,7 @@
     export let joined_in: string;
 </script>
 
-<div class="contributor">
+<a href="/" on:click|preventDefault class="contributor">
     <div class="contributor-icon">
         <img src="{contributor_image}" alt="{contributor_name}" title="{contributor_name}">
         <div class="rank-circle">
@@ -15,7 +15,7 @@
         <h3>{contributor_name}</h3>
         <p>Joined <strong>{joined_in}</strong></p>
     </div>
-</div>
+</a>
 
 
 <style>
@@ -26,6 +26,9 @@
         @apply hover:outline-2 hover:outline-green-500/90;
         @apply duration-75;
         @apply px-5 py-4;
+        @apply select-none cursor-crosshair;
+        @apply focus:outline-2 focus:outline-green-500/90;
+        @apply focus:bg-gray-900/20;
     }
     .contributor-icon {
         @apply flex flex-row;
@@ -48,7 +51,8 @@
         @apply bg-white;
         @apply font-normal;
         @apply text-base;
-        @apply shadow-2xl;
+        @apply drop-shadow-2xl;
+        @apply border border-green-900;
     }
     .contributor-info h3 {
         @apply font-medium font-noto-sans;
