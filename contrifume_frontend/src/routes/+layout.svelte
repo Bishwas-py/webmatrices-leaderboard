@@ -17,7 +17,9 @@
 
 <div class="leaderboard-container">
 	<NavBar />
-	<slot />
+	<div class="content-container">
+		<slot />
+	</div>
 </div>
 
 <style>
@@ -25,5 +27,10 @@
 		@apply min-h-screen w-screen;
 		@apply bg-primary;
 		@apply text-white;
+	}
+	.content-container {
+		@apply px-7 sm:px-10 md:px-14 lg:px-20 xl:px-28 2xl:px-36;
+		@apply py-10;
+		@apply w-full h-full;
 	}
 </style>
