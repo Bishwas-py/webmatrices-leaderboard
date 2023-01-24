@@ -35,11 +35,11 @@
 
 <style>
     .content-box {
-        @apply flex flex-col;
+        @apply flex flex-col max-w-[90rem] mx-auto;
         @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-9;
     }
     .contributor-box {
-        @apply flex flex-row flex-wrap;
+        @apply grid sm:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3;
         @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-9;
     }
 </style>

@@ -31,7 +31,7 @@
         @apply focus:bg-gray-900/20;
     }
     .contributor-icon {
-        @apply flex flex-row;
+        @apply flex flex-row shrink-0;
         @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-9;
         @apply relative;
     }
