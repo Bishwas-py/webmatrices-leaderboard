@@ -23,14 +23,14 @@
     .contributor {
         @apply flex flex-row;
         @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-9;
-        @apply outline outline-1 outline-gray-200/70;
-        @apply hover:outline-2 hover:outline-green-500/90;
         @apply duration-75;
         @apply px-5 py-4;
         @apply select-none cursor-crosshair;
-        @apply focus:bg-gray-900/20;
     }
     .contributor.challenger {
+        @apply focus:bg-gray-900/20;
+        @apply outline outline-1 outline-gray-200/70;
+        @apply hover:outline-2 hover:outline-green-500/90;
         @apply focus:outline-2 focus:outline-green-500/90;
     }
     .contributor-icon {

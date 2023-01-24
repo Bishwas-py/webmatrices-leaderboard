@@ -1,7 +1,7 @@
 <script>
-    import CountSnippet from "../item/CountSnippet.svelte";
-    import TextSection from "../item/TextSection.svelte";
-    import Contributor from "../item/Contributor.svelte";
+    import CountSnippet from "$item/CountSnippet.svelte";
+    import TextSection from "$item/TextSection.svelte";
+    import Contributor from "$item/Contributor.svelte";
 
     let contributors = [
         {

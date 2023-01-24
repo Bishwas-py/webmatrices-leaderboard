@@ -15,13 +15,14 @@
 			<span class="text-gray-300 group-hover:text-gray-100">Contributors</span>
 		</a>
 		<div class="leaderboard-nav-links gap-2">
-			<a href="https://webmatrices.com" class="hidden sm:flex leaderboard-nav-link"
-				>Webmatrices Forum</a
-			>
+			<a href="/scope" class="hidden sm:flex leaderboard-nav-link"
+			   class:active={$page.url.pathname === '/scope'}>Scope</a>
 			<a
-				href="https://blog.webmatrices.com"
-				class="hidden md:flex leaderboard-nav-link hidden sm:flex">Our Blog</a
-			>
+				href="/context"
+				class="hidden md:flex leaderboard-nav-link hidden sm:flex"
+				class:active={$page.url.pathname === '/context'}>
+				Learn Context
+			</a>
 			<a href="https://apps.webmatrices.com/" class="hidden lg:flex leaderboard-nav-link"
 				>Web Apps</a
 			>
@@ -34,20 +35,18 @@
 	</nav>
 	<nav class="px-2 sm:pl-48">
 		<div class="leaderboard-nav-links gap-9">
-			<a
-				href="/"
-				class="flex leaderboard-nav-link"
-				class:active={$page.url.pathname === '/'}
-			>
-				Overview
-			</a>
-			<a
-				href="/honoured"
-				class="flex leaderboard-nav-link"
-				class:active={$page.url.pathname === '/honoured'}
-			>
-				Honour Board
-			</a>
+			{#if $page.url.pathname === '/scope'}
+				<a href="/scope" class="flex leaderboard-nav-link" class:active="{$page.url.pathname === '/scope'}">
+					Overview
+				</a>
+			{:else if $page.url.pathname === '/context'}
+				<a href="/context" class="flex leaderboard-nav-link" class:active={$page.url.pathname === '/context'}>Overview</a>
+			{:else if $page.url.pathname === '/' || $page.url.pathname === '/honoured'}
+				<a href="/" class="flex leaderboard-nav-link" class:active={$page.url.pathname === '/'}>Overview</a>
+				<a href="/honoured"  class="flex leaderboard-nav-link" class:active={$page.url.pathname === '/honoured'}>
+					Honour Board
+				</a>
+			{/if}
 		</div>
 	</nav>
 </div>
