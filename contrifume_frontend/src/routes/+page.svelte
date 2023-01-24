@@ -7,11 +7,13 @@
         {
             contributor_name: "Sushil Phuyal",
             contributor_image: "https://avatars.githubusercontent.com/u/63364111?v=4",
+            contributor_status: "challenger",
             joined_in: "April 2021",
         },
         {
             contributor_name: "Basant Karki",
             contributor_image: "https://avatars.githubusercontent.com/u/60461905?v=4",
+            contributor_status: "challenger",
             joined_in: "January 2021",
         },
         {
@@ -27,7 +29,7 @@
     <TextSection title="0x0A Leaderboard" description="These are the Bug Hunter A-listers. Learn from their reports and successes by viewing their profile."/>
     <div class="contributor-box">
         {#each contributors as contributor}
-            <Contributor contributor_name="{contributor.contributor_name}" contributor_image="{contributor.contributor_image}" joined_in="{contributor.joined_in}"/>
+            <Contributor contributor_name="{contributor.contributor_name}" contributor_image="{contributor.contributor_image}" joined_in="{contributor.joined_in}" contributor_status="{contributor.contributor_status}"/>
         {/each}
     </div>
 </div>

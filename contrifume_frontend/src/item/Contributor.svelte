@@ -2,9 +2,10 @@
     export let contributor_name: string;
     export let contributor_image: string;
     export let joined_in: string;
+    export let contributor_status: string;
 </script>
 
-<a href="/" on:click|preventDefault class="contributor">
+<a href="/" on:click|preventDefault class="contributor" class:challenger={contributor_status === 'challenger'}>
     <div class="contributor-icon">
         <img src="{contributor_image}" alt="{contributor_name}" title="{contributor_name}">
         <div class="rank-circle">
@@ -27,8 +28,10 @@
         @apply duration-75;
         @apply px-5 py-4;
         @apply select-none cursor-crosshair;
-        @apply focus:outline-2 focus:outline-green-500/90;
         @apply focus:bg-gray-900/20;
+    }
+    .contributor.challenger {
+        @apply focus:outline-2 focus:outline-green-500/90;
     }
     .contributor-icon {
         @apply flex flex-row shrink-0;
