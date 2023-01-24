@@ -1,20 +1,28 @@
 <script lang="ts">
-    export let contributor_name: string;
-    export let contributor_image: string;
-    export let joined_in: string;
-    export let contributor_status: string;
+    import {faLocationPin, faMap, faMapMarked, faMapMarkedAlt} from "@fortawesome/free-solid-svg-icons";
+    import Fa from "svelte-fa";
+    import type {Contributor} from "$lib/interfaces";
+
+    export let contributor: Contributor;
+    export let index: number;
 </script>
 
-<a href="/" on:click|preventDefault class="contributor" class:challenger={contributor_status === 'challenger'}>
+<a href="/" on:click|preventDefault class="contributor" class:challenger={contributor.status === 'challenger'}>
     <div class="contributor-icon">
-        <img src="{contributor_image}" alt="{contributor_name}" title="{contributor_name}">
+        <img src="{contributor.image}" alt="{contributor.name}" title="{contributor.name}">
         <div class="rank-circle">
-            <span>1</span>
+            <span>{index}</span>
         </div>
     </div>
     <div class="contributor-info">
-        <h3>{contributor_name}</h3>
-        <p>Joined <strong>{joined_in}</strong></p>
+        {#if contributor.location}
+            <div class="contributor-location">
+                <span><Fa icon="{faMapMarked}" size="sm"/></span>
+                <span>{contributor.location}</span>
+            </div>
+        {/if}
+        <h3>{contributor.name}</h3>
+        <p>Joined <strong>{contributor.joined_in}</strong></p>
     </div>
 </a>
 
@@ -26,12 +34,18 @@
         @apply duration-75;
         @apply px-5 py-4;
         @apply select-none cursor-crosshair;
+        @apply focus:bg-stone-900/50;
     }
     .contributor.challenger {
-        @apply focus:bg-gray-900/20;
         @apply outline outline-1 outline-gray-200/70;
         @apply hover:outline-2 hover:outline-green-500/90;
         @apply focus:outline-2 focus:outline-green-500/90;
+    }
+    .contributor.challenger .rank-circle {
+        @apply bg-green-600;
+        @apply border-2 border-green-700;
+        @apply text-green-50;
+        @apply shadow;
     }
     .contributor-icon {
         @apply flex flex-row shrink-0;
@@ -57,14 +71,23 @@
         @apply drop-shadow-2xl;
         @apply border border-green-900;
     }
+    .contributor-info {
+        @apply pt-3;
+    }
     .contributor-info h3 {
         @apply font-medium font-noto-sans;
         @apply text-2xl sm:text-3xl md:text-4xl;
-        @apply mt-5;
     }
     .contributor-info p {
         @apply font-normal font-noto-sans;
         @apply text-base sm:text-lg md:text-xl;
         @apply mt-1;
+    }
+    .contributor-location {
+        @apply flex flex-row;
+        @apply gap-2;
+        @apply text-xs sm:text-sm md:text-base;
+        @apply font-normal font-noto-sans;
+        @apply text-gray-300;
     }
 </style>

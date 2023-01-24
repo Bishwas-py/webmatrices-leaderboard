@@ -5,31 +5,43 @@
 
     let contributors = [
         {
-            contributor_name: "Sushil Phuyal",
-            contributor_image: "https://avatars.githubusercontent.com/u/63364111?v=4",
-            contributor_status: "challenger",
+            name: "Sushil Phuyal",
+            image: "https://avatars.githubusercontent.com/u/63364111?v=4",
+            status: "challenger",
             joined_in: "April 2021",
         },
         {
-            contributor_name: "Basant Karki",
-            contributor_image: "https://avatars.githubusercontent.com/u/60461905?v=4",
-            contributor_status: "challenger",
+            name: "Basant Karki",
+            image: "https://avatars.githubusercontent.com/u/60461905?v=4",
+            status: "challenger",
             joined_in: "January 2021",
         },
         {
-            contributor_name: "Bishwas Bhandari",
-            contributor_image: "https://avatars.githubusercontent.com/u/42182303?v=4",
+            name: "Bipin Thapa",
+            image: "https://avatars.githubusercontent.com/u/58821821?v=4",
+            status: "challenger",
             joined_in: "January 2021",
-        }
-    ]
+        },
+        {
+            name: "Saugat Rimal",
+            image: "https://avatars.githubusercontent.com/u/86593756?v=4",
+            joined_in: "January 2021",
+        },
+        {
+            name: "Bishwas Bhandari",
+            image: "https://avatars.githubusercontent.com/u/42182303?v=4",
+            joined_in: "January 2021",
+            contributor_location: "Kathmandu, Nepal",
+        },
+    ];
 </script>
 
 <div class="content-box">
     <CountSnippet title="CHAMPIONS" count="{1}"/>
     <TextSection title="0x0A Leaderboard" description="These are the Bug Hunter A-listers. Learn from their reports and successes by viewing their profile."/>
     <div class="contributor-box">
-        {#each contributors as contributor}
-            <Contributor contributor_name="{contributor.contributor_name}" contributor_image="{contributor.contributor_image}" joined_in="{contributor.joined_in}" contributor_status="{contributor.contributor_status}"/>
+        {#each contributors as contributor, index}
+            <Contributor {contributor} {index}/>
         {/each}
     </div>
 </div>
